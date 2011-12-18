@@ -43,6 +43,7 @@ For MORE information,please see [Plugin page](http://ihacklog.com/?p=4901 "Plugi
 == Changelog ==
 = 1.0.1 =
 * upgraded: use new WordPress 3.3 quicktags API to create the button.
+* fixed: use admin_print_footer_scripts HOOK to print the javascript to ensure that it is print behind the quicktags.js
 
 = 1.0.0 =
 published the first version
