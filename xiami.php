@@ -49,7 +49,7 @@ class hacklog_xiami
 	public static function init()
 	{
 		add_shortcode( 'xiami',array(__CLASS__, 'xiami_shortcode_handler') );
-		add_action('admin_footer',array(__CLASS__,'ihacklog_add_xiami_tag'),99);
+		add_action('admin_print_footer_scripts',array(__CLASS__,'ihacklog_add_xiami_tag'),99);
 	}
 	// [xiami width="257" height="33"]the url[/xiami]
 	public static function xiami_shortcode_handler( $atts, $content=null, $code="" ) 
