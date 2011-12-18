@@ -3,7 +3,7 @@
  Plugin Name: Hacklog-Xiami
  Plugin URI: http://ihacklog.com/?p=4901
  Description: 此插件为在日志中添加虾米音乐(单曲或专辑)添加WordPress短代码支持.This plugin adds shortcode support for inserting xiami song or album widget to your blog posts conveniently.
- Version: 1.0.0
+ Version: 1.0.1
  Author: <a href="http://ihacklog.com/">荒野无灯</a>
  Author URI: http://ihacklog.com/
  */
@@ -103,42 +103,18 @@ class hacklog_xiami
 		}
 		echo <<<EOT
 		<script type="text/javascript">
-
-						var hacklog_xiamiToolbar = document.getElementById("ed_toolbar");
-						if(hacklog_xiamiToolbar){
-							var hacklog_xiamiNr = edButtons.length;
-							edButtons[edButtons.length] = new edButton('ed_hacklog_xiami','','','','');
-							var hacklog_xiamiBut = hacklog_xiamiToolbar.lastChild;
-							while (hacklog_xiamiBut.nodeType != 1){
-								hacklog_xiamiBut = hacklog_xiamiBut.previousSibling;
-							}
-							hacklog_xiamiBut = hacklog_xiamiBut.cloneNode(true);
-							hacklog_xiamiToolbar.appendChild(hacklog_xiamiBut);
-							hacklog_xiamiBut.value = 'xiami';
-							hacklog_xiamiBut.onclick = edInsertXiami;
-							hacklog_xiamiBut.title = "Insert xiami song or album";
-							hacklog_xiamiBut.id = "ed_hacklog_xiami";
-						}
-
-						function edInsertXiami() 
-						{
-							if(!edCheckOpenTags(hacklog_xiamiNr)){
-								var U = prompt('Enter song OR album URL' , 'http://');
-								if(!U)
-									return false;
-								/*var W = prompt('Enter width' , '257');
-								var H = prompt('Enter height' , '33');
-								*/
-								var theTag = '[xiami]'+U+'[/xiami]';
-								edButtons[hacklog_xiamiNr].tagStart  = theTag;
-								edInsertTag(edCanvas, hacklog_xiamiNr);
-							} 
-							else 
-							{
-								edInsertTag(edCanvas, hacklog_xiamiNr);
-							}
-						}
-					-->
+		QTags.addButton('xiami' ,'xiami' , hacklogInsertXiami ,'','x', 'Insert xiami song or album');
+		function hacklogInsertXiami() 
+		{
+				var U = prompt('Enter song OR album URL' , 'http://');
+				if(!U)
+					return false;
+				/*
+				var W = prompt('Enter width' , '257');
+				var H = prompt('Enter height' , '33');
+				*/
+				QTags.insertContent('[xiami]'+U+'[/xiami]');
+		}
 		</script>
 EOT;
 	}

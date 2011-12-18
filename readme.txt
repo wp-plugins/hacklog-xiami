@@ -2,9 +2,9 @@
 Contributors: ihacklog
 Donate link: http://ihacklog.com/about
 Tags: music, shortcode
-Requires at least: 3.2.1
-Tested up to: 3.2.1
-Stable tag: 1.0.0
+Requires at least: 3.3
+Tested up to: 3.3
+Stable tag: 1.0.1
 
 此插件为在日志中添加虾米音乐(单曲或专辑)提供方便，添加了WordPress短代码支持.
 
@@ -19,8 +19,10 @@ Stable tag: 1.0.0
 [xiami width="300" height="40"]歌曲URL[/xiami]
 [xiami width="400" height="500"]专辑URL[/xiami]
 后台HTML编辑器添加了**xiami**按钮，方便操作。
-This plugin adds shortcode support for inserting xiami song or album widget to your blog posts conveniently.
 
+1.0.1版采用新的WordPress 3.3 quicktags API来创建按钮，如果你还在用3.3以前的版本，请安装本插件1.0.0版。
+
+This plugin adds shortcode support for inserting xiami song or album widget to your blog posts conveniently.
 
 For MORE information,please see [Plugin page](http://ihacklog.com/?p=4901 "Plugin page") 
 
@@ -39,6 +41,8 @@ For MORE information,please see [Plugin page](http://ihacklog.com/?p=4901 "Plugi
 
 
 == Changelog ==
+= 1.0.1 =
+* upgraded: use new WordPress 3.3 quicktags API to create the button.
 
 = 1.0.0 =
 published the first version
